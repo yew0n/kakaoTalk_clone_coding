@@ -1,0 +1,210 @@
+<!--
+ - @filename    : friends.html
+ - @description : 카카오톡 클론코딩 - 친구목록 HTML
+ - @author      : 신예원 (syewon0128@gmail.com)
+ -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>KakaoTalk</title>
+    <!-- 크로스 브라우징 호환성 부분 시작 -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <!-- 크로스 브라우징 호환성 부분 끝 -->
+    <!-- 아이폰 / 안드로이드 아이콘 -->
+    <link rel="apple-touch-icon" href="img/icon.jpg" />
+    <link rel="shortcut icon" href="img/icon.jpg" />
+    <!-- 공통 CSS 파일 및 index 페이지 UI 구성 CSS 참조 처리 -->
+    <link rel="stylesheet" type="text/css" href="css/friends.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+</head>
+
+<body>
+    <div id="container">
+        <!-- 헤더(공통) -->
+        <div id="header">
+            <h1>Friends</h1>
+            <ul>
+                <li><a href="#"><img src="img/settings.jpg" alt="설정">
+                        <h3>설정</h3>
+                    </a></li>
+                <li><a href="#"><img src="img/music.jpg" alt="프로필뮤직">
+                        <h3>프로필뮤직</h3>
+                    </a></li>
+                <li><a href="#"><img src="img/plus_friend.jpg" alt="친구추가">
+                        <h3>친구추가</h3>
+                    </a></li>
+                <li><a href="#"><img src="img/search.jpg" alt="검색">
+                        <h3>검색</h3>
+                    </a></li>
+            </ul>
+        </div>
+        <hr />
+        <!-- content 영역 -->
+        <div id="content">
+            <!-- 내 프로필 -->
+            <div id="my_profile">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_1.png" /></span>
+                            <span class="desc">
+                                <strong>Disney</strong>
+                                <br />
+                                my profile - Walt Disney
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Recommended Friends / Channel -->
+            <div class="collapse">
+                <!-- 게시글 하나 단위 -->
+                <div class='collapse-item'>
+                    <!-- 게시글 제목영역 -->
+                    <h2 class='collapse-title'><a href="#content1">Recommended Friends</a></h2>
+                    <!-- 게시글 내용영역 -->
+                    <div id="content1" class="content">
+                        <a href="#">
+                            <span class="thumb"><img src="img/recommended_icon.jpg" /></span>
+                            <span class="desc">Discover more people</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- 게시글 하나 단위 -->
+                <div class='collapse-item'>
+                    <!-- 게시글 제목영역 -->
+                    <h2 class='collapse-title'><a href="#content2">Channel</a></h2>
+                    <!-- 게시글 내용영역 -->
+                    <div id="content2" class="content">
+                        <a href="#">
+                            <span class="thumb"><img src="img/channel_icon.jpg" /></span>
+                            <span class="desc">Channel</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript">
+            $(function() {
+                /** 게시글의 제목을 클릭한 경우 호출되는 이벤트 정의 */
+                $(".collapse-title a").click(function(e) {
+                    // 링크의 기본 동작(페이지 이동) 방지
+                    e.preventDefault();
+
+                    // 클릭한 요소의 href 속성을 가져온다 --> 내용영역의 id
+                    var target = $(this).attr('href');
+                    // 가져온 내용영역의 id를 화면에 표시한다.
+                    $(target).slideToggle(100);
+                    // 내용영역(.content)중에서
+                    // 클릭한 요소가 지정한 항목만 제외(not($(target)))
+                    // 하고 화면에서 숨긴다.
+                    $(".content").not($(target)).slideUp(100);
+                });
+            });
+            </script>
+
+            <!-- 친구 프로필 -->
+            <div id="friends_profile">
+                <div id="friends_title">Friends 7</div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_2.png" /></span>
+                            <span class="desc">
+                                <strong>라푼젤</strong>
+                                <br />
+                                Tangled - 라푼젤
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_3.jpg" /></span>
+                            <span class="desc">
+                                <strong>엘사</strong>
+                                <br />
+                                Frozen - 엘사
+                            </span>
+                            <span class="playlist">
+                                Let It Go - Idina Menzel
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_5.jpg" /></span>
+                            <span class="desc">
+                                <strong>에리얼</strong>
+                                <br />
+                                The Little Mermaid - 인어공주
+                            </span>
+                            <span class="playlist">
+                                Part of Your World - Jodi Benson
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_6.jpg" /></span>
+                            <span class="desc">
+                                <strong>백설공주</strong>
+                                <br />
+                                The Snow White - 백설공주
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_7.jpg" /></span>
+                            <span class="desc">
+                                <strong>신데렐라</strong>
+                                <br />
+                                Cinderella - 신데렐라
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_9.jpg" /></span>
+                            <span class="desc">
+                                <strong>자스민</strong>
+                                <br />
+                                Aladdin - 자스민
+                            </span>
+                            <span class="playlist">
+                                Speechless - Naomi Scott
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="thumb"><img src="img/profile_8.jpg" /></span>
+                            <span class="desc">
+                                <strong>잭 프로스트</strong>
+                                <br />
+                                Rise of Guardians - 잭 프로스트
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <!-- 하단(공통) -->
+        <div id="footer">
+            <ul>
+                <li><a href="friends.html"><img src="img/friend_active.png" alt="친구목록"/></a></li>
+                <li><a href="chats.html"><img src="img/message_icon.png" alt="대화목록"/></a></li>
+                <li><a href="#"><img src="img/hashtag_icon.png" alt="해시태그검색"/></a></li>
+                <li><a href="#"><img src="img/settings_icon.png" alt="설정"/></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

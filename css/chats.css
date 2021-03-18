@@ -1,0 +1,78 @@
+/**
+ * @filename    : chats.css
+ * @description : 카카오톡 클론 코딩 - 채팅목록 CSS
+ * @author      : 신예원 (syewon0128@gmail.com)
+ */
+
+@charset "utf-8";
+
+/* chats - 내용 기본 */
+#content {
+    width:100%;
+    min-height: 580px;
+    margin-top:45px;
+}
+
+
+#advertisement{
+    text-align:center;
+}
+#advertisement img{
+    width:95%;
+}
+#friends_chatting img{
+    width:50px;
+    height:50px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    float:left;
+}
+#content #friends_chatting li{
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-top:10px;
+    padding-left:10px;
+    padding-bottom: 7px;
+}
+/* 대화내용영역 > 인당 대화내용 > 링크  > 이미지박스
+- 프로필 이미지의 float 처리
+--------------------------------*/
+.thumb {
+    display: block;
+    float: left;
+}
+
+/* 대화내용영역 > 인당 대화내용박스 > 링크 > 대화 내용 박스
+- 대화 내용 (TEXT)에 대한 float 처리
+- li 태그는 float 가 적용된 자식 요소를 감싸지 못한다.
+--------------------------------*/
+.desc {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    line-height: 150%;
+    vertical-align: middle;
+}
+/* flaoat 이용한 부분 마감제
+--------------------------------*/
+#friends_chatting li:after{
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+/* 대화 내용에서 대화상대 이름을 제외하고 대화내용만 사이즈 조절 */
+#friends_chatting #message {
+    font-size:12px;
+}
+/* 대화 내용 창에서 대화 상대 별로 마지막 대화를 나눈 시간 스타일 조정 */
+.time {
+    display: block;
+    float:right;
+    padding-right:10px;
+    padding-top:5px;
+    font-size: 0.7em;
+    color:#aaa;
+}

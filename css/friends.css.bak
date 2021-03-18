@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/* friends - 내용 기본 */
+#content {
+    padding: 10px;
+    min-height: 580px;
+    margin-top:45px;
+}
+
+#content img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    float: left;
+}
+
+/**---------------------------------- 내 프로필 시작 -----------------------------------------*/
+#content>#my_profile{
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-bottom: 7px;
+}
+#content>#friends_profile li {
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-top:10px;
+    padding-bottom: 7px;
+}
+/* 프로필영역 > 인당 프로필박스 > 링크  > 이미지박스
+- 프로필 이미지의 float 처리
+--------------------------------*/
+.thumb {
+    display: block;
+    float: left;
+}
+
+/* 프로필영역 > 인당 프로필박스 > 링크 > 프로필 내용 박스
+- 프로필 내용 (TEXT)에 대한 float 처리
+- li 태그는 float 가 적용된 자식 요소를 감싸지 못한다.
+--------------------------------*/
+.desc {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-top:5px;
+    font-size: 0.8em;
+    line-height: 150%;
+}
+/* 멜론 뮤직영역 - 스타일 > 테두리+둥글게+길이 초과시 말줄임 효과 */
+.playlist {
+    display: block;
+    float: right;
+    margin-top:5px;
+    width:125px;
+    padding:5px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size: 0.7em;
+    color:#aaa;
+    border:1px solid #36F776;
+    border-radius: 5px;
+}
+/* flaoat 이용한 부분들 마감제
+--------------------------------*/
+#my_profile li:after, #content1:after ,#content2:after, #friends_profile li:after{
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+/**---------------------------------- 내 프로필 끝 -----------------------------------------*/
+
+/* 전체 박스 크기 및 정렬 */
+.collapse {
+    width: 100%;
+    margin: auto;
+}
+/* 프로필 영역의 배경색상과 태두리 */
+.collapse-title {
+    background: #eeeeee;
+    border: 1px solid #d5d5d5;
+}
+/* 프로필 영역의 링크에 대한 크기, 글자모양 */
+.collapse-title a {
+    display: block;
+    width: auto;
+    padding: 5px;
+    height: 15px;
+    font-size: 10px;
+    color: #555;
+    text-decoration: none;
+    vertical-align: middle;
+}
+/* 프로필 내용 영역의 여백, 글자크기, 태두리, 숨김 */
+.content {
+    padding: 10px 0 10px 0 ;
+    font-size: 15px;
+    vertical-align: middle;
+    display: none;
+}
+#friends_title{
+    background: #eeeeee;
+    border: 1px solid #d5d5d5;
+    width: auto;
+    padding: 5px;
+    height: 15px;
+    font-size: 10px;
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    vertical-align: middle;
+}

@@ -1,0 +1,114 @@
+/**
+ * @filename    : common.css
+ * @description : 카카오톡 클론 코딩 - 친구/채팅 목록 공통 CSS
+ * @author      : 신예원 (syewon0128@gmail.com)
+ */
+@charset "utf-8";
+
+/* 전체 공통 내용
+--------------------------------------------*/
+* {
+    font-family: "나눔고딕", "맑은고딕", "굴림", "Helvetica";
+}
+
+a {
+    color: #222222;
+    text-decoration: none;
+}
+
+hr {
+    display: none;
+}
+
+/* 상단 bar 상단 고정
+--------------------------------------------*/
+#header {
+    padding-top: 5px;
+    background: #FFFFFF;
+    height: 45px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+
+/* 상단 bar > 텍스트
+--------------------------------------------*/
+#header h1 {
+    width: 71px;
+    height: 24px;
+    position: absolute;
+    font-size: 20px;
+    left: 10px;
+    top: 18px;
+}
+
+/* 상단 bar > 우측 상단 이미지 전체 여백 조정
+--------------------------------------------*/
+#header>ul {
+    margin-left: 250px;
+}
+
+/* 상단 bar > 우측 상단 이미지 고정
+--------------------------------------------*/
+#header>ul>li {
+    padding-top: 4px;
+    display: inline;
+    float: right;
+}
+
+/* 상단 bar > text 안보이게
+--------------------------------------------*/
+#header>ul>li>a>h3 {
+    text-indent: -10000px;
+}
+
+/* 상단 bar > 상단 오른쪽 메뉴 이미지 사이즈 고정
+--------------------------------------------*/
+#header>ul>li>a>img {
+    width: 40px;
+    height: 40px;
+}
+
+/* 상단 bar > 우측 상단 이미지 float 마감제
+--------------------------------------------*/
+#header>ul :after {
+    content: '';
+    float: none;
+    clear: both;
+}
+
+/* 하단 footer 하단 고정
+--------------------------------------------*/
+#footer {
+    width: 100%;
+    background-color: #F9F9F9;
+    padding-top: 10px;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.5rem;
+    z-index: 1;
+}
+
+#footer>ul>li {
+    width: 24.5%;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    float: left;
+}
+
+#footer>ul:after {
+    content: '';
+    float: none;
+    clear: both;
+}
+
+#footer img {
+    width: 25px;
+    height: 25px;
+}
